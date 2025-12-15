@@ -20,8 +20,9 @@ export default function HeroSlider() {
   const next = () => setIndex((prev) => (prev + 1) % slides.length);
   const prev = () =>
     setIndex((prev) => (prev - 1 + slides.length) % slides.length);
-
+motion
   return (
+    
     <div className="relative h-screen w-full overflow-hidden text-white">
       {/* Background */}
       <AnimatePresence mode="wait">
