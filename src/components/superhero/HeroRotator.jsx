@@ -28,11 +28,13 @@ motion
       </AnimatePresence>
 
       {/* Rotating Circles */}
-      <HeroCircles
+      <div className="sm:block  hidden">
+        <HeroCircles
         heroes={heroes}
         activeIndex={activeIndex}
         setActiveIndex={setActiveIndex}
       />
+      </div>
     </div>
   );
 }

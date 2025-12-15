@@ -12,7 +12,7 @@ export default function HeroCircles({
   const angleStep = (2 * Math.PI) / total;
 motion
   return (
-    <div className="relative w-[600px] h-[580px] bg-[#D9D9D9] rounded-[290px]  mt-[-57px] mr-[-180px] mb-[-200px]">
+    <div className="relative w-[600px] h-[580px] bg-[#D9D9D9] rounded-[290px]  mt-[-57px] mr-[-180px] mb-[-200px] ">
       {heroes.map((hero, index) => {
         // Rotate relative to active index
         const angle = angleStep * (index - activeIndex) - Math.PI / 2;

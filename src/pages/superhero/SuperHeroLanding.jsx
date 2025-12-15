@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { superHeroes } from "./superHeroes";
 import SuperHeroNavigation from './../../components/superhero/SuperHeroNavigation';
 import HeroRotator from './../../components/superhero/HeroRotator';
+import { superHeroes } from './../../data/superhero/superHeroes';
 
 
 export default function SuperHeroLanding() {

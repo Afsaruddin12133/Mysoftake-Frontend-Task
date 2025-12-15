@@ -1,45 +1,4 @@
-const institutions = [
-  {
-    name: "Viqarunnisa School and College",
-    type: "college",
-    students: 2,
-    staff: 1,
-    revenue: "৳1,600,000",
-    status: "Active",
-  },
-  {
-    name: "Police Line High School",
-    type: "school",
-    students: 1,
-    staff: 1,
-    revenue: "৳300,000",
-    status: "Active",
-  },
-  {
-    name: "Pilot High School",
-    type: "school",
-    students: 2,
-    staff: 2,
-    revenue: "৳1,000,000",
-    status: "Active",
-  },
-  {
-    name: "University of Dhaka",
-    type: "university",
-    students: 2,
-    staff: 1,
-    revenue: "৳9,000,000",
-    status: "Active",
-  },
-  {
-    name: "Tech Land Institute",
-    type: "college",
-    students: 1,
-    staff: 1,
-    revenue: "৳600,000",
-    status: "Active",
-  },
-];
+import { institutions } from "../../data/dashboard/institutions";
 
 const typeStyles = {
   school: "bg-blue-100 text-blue-600",

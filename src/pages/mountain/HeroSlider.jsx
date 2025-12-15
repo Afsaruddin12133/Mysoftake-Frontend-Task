@@ -1,16 +1,17 @@
-import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { slides } from "./slides";
+import { useState } from "react";
+import Navigation from "../../components/mountain/Navigation";
+import { slides } from "../../data/mountain/slides";
 import {
   ChevronLeft,
   ChevronRight,
   Facebook,
   Instagram,
-  Twitter,
   Menu,
+  Twitter,
   X,
 } from "lucide-react";
-import Navigation from "../../components/mountain/Navigation";
+
 
 export default function HeroSlider() {
   const [index, setIndex] = useState(0);
@@ -18,11 +19,9 @@ export default function HeroSlider() {
   const slide = slides[index];
 
   const next = () => setIndex((prev) => (prev + 1) % slides.length);
-  const prev = () =>
-    setIndex((prev) => (prev - 1 + slides.length) % slides.length);
-motion
+  const prev = () => setIndex((prev) => (prev - 1 + slides.length) % slides.length);
+
   return (
-    
     <div className="relative h-screen w-full overflow-hidden text-white">
       {/* Background */}
       <AnimatePresence mode="wait">
@@ -43,7 +42,7 @@ motion
       {/* Mobile Hamburger */}
       <button
         onClick={() => setMenuOpen(true)}
-        className="absolute top-6 left-6 z-30 lg:hidden"
+        className="absolute top-6 left-6 z-30 lg:hidden cursor-pointer"
       >
         <Menu size={28} />
       </button>
@@ -59,11 +58,11 @@ motion
           >
             <button
               onClick={() => setMenuOpen(false)}
-              className="self-end mb-10"
+              className="self-end mb-10 cursor-pointer"
             >
               <X size={32} />
             </button>
-            <Navigation mobile onClose={() => setMenuOpen(false)} />
+            <Navigation mobile={true} onClose={() => setMenuOpen(false)} />
           </motion.div>
         )}
       </AnimatePresence>
@@ -93,7 +92,7 @@ motion
                 {slide.description}
               </p>
 
-              <button className="mt-10 sm:mt-16 lg:ml-[140px] lg:mt-[103px] rounded-full border border-blue-400 px-8 py-3 font-semibold hover:bg-blue-400 hover:text-black transition">
+              <button className="mt-10 sm:mt-16 lg:ml-[140px] lg:mt-[103px] rounded-full border border-blue-400 px-8 py-3 font-semibold hover:bg-blue-400 hover:text-black transition cursor-pointer">
                 GET STARTED
               </button>
             </motion.div>
@@ -123,33 +122,52 @@ motion
       </div>
 
       {/* Social Icons */}
-      <div className="absolute bottom-8 left-6 sm:left-10 lg:bottom-[100px] lg:left-1/13 flex items-center gap-6 z-20">
+      <div className="absolute bottom-8 left-6 sm:left-10 lg:bottom-[100px] lg:left-1/13 flex items-center gap-6 z-20 cursor-pointer">
         <Facebook size={24} />
         <Twitter size={24} />
         <Instagram size={24} />
       </div>
 
-      {/* Arrows */}
-      <div className="absolute bottom-8 right-6 sm:right-10 lg:bottom-[100px] lg:left-[1020px] flex items-center gap-6 z-20">
-        <button onClick={prev} className="rounded-full border">
+      {/* Arrows (Desktop) */}
+      <div className="absolute bottom-8 right-6 sm:right-10 lg:bottom-[100px] lg:left-[1020px] hidden md:flex items-center gap-6 z-20">
+        <button onClick={prev} className="rounded-full border cursor-pointer">
           <ChevronLeft size={40} />
         </button>
-        <button onClick={next} className="rounded-full border">
+        <button onClick={next} className="rounded-full border cursor-pointer">
           <ChevronRight size={40} />
         </button>
       </div>
 
       {/* Progress (Desktop Only) */}
-      <div className="absolute bottom-[110px] right-40 hidden lg:flex items-center gap-4">
+      <div className="absolute bottom-[110px] right-40 hidden xl:flex items-center gap-4">
         <div className="h-[4px] w-[582px] bg-white/30">
           <div
             className="h-full bg-yellow-400 transition-all"
             style={{ width: `${((index + 1) / slides.length) * 100}%` }}
           />
         </div>
-        <span className="text-sm">
-          {String(index + 1).padStart(2, "0")}
-        </span>
+        <span className="text-sm">{String(index + 1).padStart(2, "0")}</span>
+      </div>
+
+      {/* Arrows & Progress (Mobile/Tablet) */}
+      <div className="absolute bottom-4 left-0 w-full flex flex-col items-center gap-2 md:hidden z-20">
+        <div className="flex items-center gap-4">
+          <button onClick={prev} className="rounded-full border cursor-pointer bg-black/40 hover:bg-black/60 transition p-1">
+            <ChevronLeft size={32} />
+          </button>
+          <button onClick={next} className="rounded-full border cursor-pointer bg-black/40 hover:bg-black/60 transition p-1">
+            <ChevronRight size={32} />
+          </button>
+        </div>
+        <div className="flex items-center gap-2 w-4/5 max-w-xs">
+          <div className="h-[3px] w-full bg-white/30">
+            <div
+              className="h-full bg-yellow-400 transition-all"
+              style={{ width: `${((index + 1) / slides.length) * 100}%` }}
+            />
+          </div>
+          <span className="text-xs">{String(index + 1).padStart(2, "0")}</span>
+        </div>
       </div>
     </div>
   );

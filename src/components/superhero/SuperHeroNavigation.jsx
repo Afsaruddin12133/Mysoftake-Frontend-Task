@@ -1,37 +1,8 @@
 import { useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import logo from '../../assets/superhero/logo.png'
+import { navItems } from './../../data/superhero/navItems';
 
-const navItems = [
-  {
-    label: "Home",
-    submenu: ["Hero Home", "Hero Intro"],
-  },
-  {
-    label: "About Us",
-    submenu: ["Who We Are", "Our Mission"],
-  },
-  {
-    label: "Services",
-    submenu: ["Hero Training", "Hero Support"],
-  },
-  {
-    label: "Projects",
-    submenu: ["Avengers", "Justice League"],
-  },
-  {
-    label: "Blog",
-    submenu: ["Latest News", "Hero Stories"],
-  },
-  {
-    label: "Page",
-    submenu: ["FAQ", "Testimonials"],
-  },
-  {
-    label: "Contact",
-    submenu: ["Contact Info", "Join Us"],
-  },
-];
 
 export default function SuperHeroNavigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -48,7 +19,7 @@ export default function SuperHeroNavigation() {
           {navItems.map((item) => (
             <div
               key={item.label}
-              className="relative group cursor-pointer"
+              className="relative group cursor-pointer text-[#034833]"
             >
               <div className="flex items-center gap-1">
                 <span className="uppercase text-sm tracking-wide">
@@ -72,14 +43,14 @@ export default function SuperHeroNavigation() {
           ))}
 
           {/* CTA */}
-          <button className="ml-6 flex items-center gap-2 rounded-full border border-yellow-400 px-6 py-2 text-sm font-semibold hover:bg-yellow-400 hover:text-black transition">
+          <button className="ml-6 flex items-center gap-2 rounded-full  px-6 py-2 text-sm font-semibold hover:bg-[#83DD20] transition bg-[#83CD20] cursor-pointer">
             Get An Appointment
           </button>
         </nav>
 
         {/* Mobile Hamburger */}
         <button
-          className="lg:hidden"
+          className="lg:hidden cursor-pointer"
           onClick={() => setMobileOpen(true)}
         >
           <Menu size={28} />
@@ -89,7 +60,7 @@ export default function SuperHeroNavigation() {
       {/* Mobile Menu */}
       {mobileOpen && (
         <div className="fixed inset-0 bg-black/95 z-50 text-white p-6 overflow-y-auto">
-          <div className="flex justify-between items-center mb-8">
+          <div className="flex justify-between items-center mb-8 " >
             <img src={logo} alt="logo" />
             <button onClick={() => setMobileOpen(false)}>
               <X size={28} />
@@ -129,7 +100,7 @@ export default function SuperHeroNavigation() {
               </div>
             ))}
 
-            <button className="mt-6 w-full rounded-full border border-yellow-400 py-3 font-semibold hover:bg-yellow-400 hover:text-black transition">
+            <button className="mt-6 w-full rounded-full  py-3 font-semibold bg-[#83CD20] hover:bg-[#83DD20] transition cursor-pointer">
               Get An Appointment
             </button>
           </nav>
