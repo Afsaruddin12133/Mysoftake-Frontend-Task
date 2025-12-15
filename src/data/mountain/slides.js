@@ -1,4 +1,4 @@
-import mounten1 from '../../assets/Mountain/mounten-1.jpg';
+import mounten1 from '../../assets/mountain/mounten-1.jpg';
 import mounten2 from '../../assets/Mountain/mounten-2.jpg';
 import mounten3 from '../../assets/Mountain/mounten-3.jpg';
 import mounten4 from '../../assets/Mountain/mounten-4.jpg';

@@ -122,7 +122,7 @@ export default function HeroSlider() {
       </div>
 
       {/* Social Icons */}
-      <div className="absolute bottom-8 left-6 sm:left-10 lg:bottom-[100px] lg:left-1/13 flex items-center gap-6 z-20 cursor-pointer">
+      <div className="absolute bottom-8 sm:bottom-4 left-6 sm:left-10 lg:bottom-[100px] lg:left-1/13 flex items-center gap-6 z-20 cursor-pointer">
         <Facebook size={24} />
         <Twitter size={24} />
         <Instagram size={24} />
@@ -159,7 +159,7 @@ export default function HeroSlider() {
             <ChevronRight size={32} />
           </button>
         </div>
-        <div className="flex items-center gap-2 w-4/5 max-w-xs">
+        <div className="flex items-center gap-2 w-4/5 max-w-xs  hidden ">
           <div className="h-[3px] w-full bg-white/30">
             <div
               className="h-full bg-yellow-400 transition-all"

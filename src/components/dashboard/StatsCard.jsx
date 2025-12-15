@@ -7,7 +7,7 @@ export default function StatsCard({
   icon: Icon,
 }) {
   return (
-    <div className="w-full rounded-2xl border border-gray-300 bg-white p-5 shadow-sm">
+    <div className="w-full rounded-2xl border border-gray-300 bg-white p-5 shadow-sm ">
       {/* Header */}
       <div className="flex items-center justify-between">
         <p className="text-sm font-medium text-gray-700">
